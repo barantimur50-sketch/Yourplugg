@@ -53,7 +53,7 @@ const producten = {
       image: "3.jpeg"
     },
         {
-      name: "Low-Top Sneaker – Bruin/Wit",
+      name: "Low-Top – Bruin/Wit",
       size: "39 / 45",
       price: "€139,99",
       image: "5.jpeg"
@@ -71,7 +71,7 @@ const producten = {
       image: "7.jpeg"
     },
     {
-      name: "Chunky Sneakers – Blauw/Groen",
+      name: "Sneakers – Blauw/Groen",
       size: "43 / 42.5",
       price: "€79,99",
       image: "8.jpeg"
