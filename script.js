@@ -38,13 +38,13 @@ const producten = {
       name: "Chunky Sneaker – Wit/Grijs",
       size: "40 / 41 / 42 / 43 / 44 / 45",
       price: "€89,99",
-          image: "images/garvani.jpg"
+          image: "garvani.jpg"
     },
     {
       name: "Low-Top Suede – Camel",
       size: "39 / 40 / 41 / 42 / 43",
       price: "€79,99",
-      image: ""
+      image: "test123.jpg"
     },
     {
       name: "High-Top Canvas – Zwart",
