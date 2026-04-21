@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourPlugg</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1 class="brand">YourPlugg</h1>
+  </header>
+
+  <!-- CATALOGUS -->
+  <main>
+    <h2 class="catalogue-title">Catalogus</h2>
+
+    <!-- CATEGORIE TABS -->
+    <nav class="cat-nav">
+      <button class="cat-btn active" data-cat="kleding">Kleding</button>
+      <button class="cat-btn" data-cat="schoenen">Schoenen</button>
+      <button class="cat-btn" data-cat="accessoires">Accessoires</button>
+    </nav>
+
+    <div class="categories-wrapper">
+
+      <!-- KLEDING -->
+      <section class="category active" id="kleding">
+        <div class="product-grid" id="kleding-grid"></div>
+      </section>
+
+      <!-- SCHOENEN -->
+      <section class="category" id="schoenen">
+        <div class="product-grid" id="schoenen-grid"></div>
+      </section>
+
+      <!-- ACCESSOIRES -->
+      <section class="category" id="accessoires">
+        <div class="product-grid" id="accessoires-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

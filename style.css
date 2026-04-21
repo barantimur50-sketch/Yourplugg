@@ -1,0 +1,301 @@
+/* ===========================
+   VARIABELEN & RESET
+=========================== */
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --card: #1a1a1a;
+  --border: #2a2a2a;
+  --accent: #e8ff47;
+  --text-primary: #f5f5f5;
+  --text-secondary: #888;
+  --text-muted: #555;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius: 12px;
+  --transition: 0.25s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px 40px;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 10vw, 110px);
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  line-height: 1;
+  animation: fadeDown 0.7s ease both;
+}
+
+/* ===========================
+   MAIN / CATALOGUS
+=========================== */
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.catalogue-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 56px;
+  text-align: center;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+/* ===========================
+   CATEGORIE TABS NAV
+=========================== */
+.cat-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.cat-btn {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.cat-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.cat-btn.active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ===========================
+   CATEGORIEËN WRAPPER — tab content
+=========================== */
+.categories-wrapper {
+  /* geen flex meer, één sectie tegelijk zichtbaar */
+}
+
+.category {
+  display: none;
+  animation: fadeUp 0.4s ease both;
+}
+
+.category.active {
+  display: block;
+}
+
+.category-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 34px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-title::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   PRODUCT GRID — meerdere kolommen per categorie
+=========================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===========================
+   PRODUCT CARD
+=========================== */
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(232, 255, 71, 0.08);
+}
+
+.product-image-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* Placeholder als er geen afbeelding is */
+.product-image-wrap .placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+}
+
+.product-info {
+  padding: 14px 16px 18px;
+}
+
+.product-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-size {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.product-price {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
+/* ===========================
+   ANIMATIES
+=========================== */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .cat-nav {
+    gap: 10px;
+  }
+
+  .cat-btn {
+    font-size: 17px;
+    padding: 8px 18px;
+  }
+
+  main {
+    padding: 40px 16px 80px;
+  }
+}
