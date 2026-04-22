@@ -7,30 +7,7 @@
 
 const producten = {
   kleding: [
-    {
-      name: "Oversized Hoodie – Zwart",
-      size: "S / M / L / XL",
-      price: "€59,99",
-      image: "" // bijv. "images/hoodie-zwart.jpg"
-    },
-    {
-      name: "Cargo Broek – Groen",
-      size: "M / L / XL",
-      price: "€74,99",
-      image: ""
-    },
-    {
-      name: "Graphic Tee – Wit",
-      size: "S / M / L",
-      price: "€29,99",
-      image: ""
-    },
-    {
-      name: "Puffer Jacket – Navy",
-      size: "M / L / XL ",
-      price: "€119,99",
-      image: ""
-    }
+
   ],
 
   schoenen: [
