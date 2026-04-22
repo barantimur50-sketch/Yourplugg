@@ -86,24 +86,7 @@ const producten = {
       price: "€89,99",
       image: "4.jpeg"
     },
-    {
-      name: "Crossbody Bag – Bruin",
-      size: "One Size",
-      price: "€39,99",
-      image: ""
-    },
-    {
-      name: "Beanie – Grijs",
-      size: "One Size",
-      price: "€19,99",
-      image: ""
-    },
-    {
-      name: "Bucket Hat – Creme",
-      size: "S/M – L/XL",
-      price: "€22,99",
-      image: ""
-    }
+    
   ]
 };
 
